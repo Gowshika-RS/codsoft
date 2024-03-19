@@ -1,0 +1,115 @@
+#include<bits/stdc++.h>
+using namespace std;
+void Add(list<string>&a)
+{
+    cout<<endl;
+    string num;
+    cout<<"Enter the new task: ";
+    cin>>num;
+    a.push_back(num);
+    cout<<"Adding task is completed"<<endl;
+}
+void show(list<string>&a,int *p)
+{
+    cout<<endl;
+    list<string>::iterator it;
+    int j=1;
+    for(it=a.begin();it!=a.end();it++)
+    {
+        if(p[j]==0)
+        {
+            cout<<*it<<" - "<<"Remaining"<<endl;
+            
+        }
+        else if(p[j]==1)
+        {
+            cout<<*it<<" - "<<"Finished"<<endl;
+        }
+        j++;
+    }
+    cout<<endl;
+}
+void score(list<string>&a,int *p)
+{
+    cout<<endl;
+    list<string>::iterator it;
+    int j=1;
+    for(it=a.begin();it!=a.end();it++)
+    {
+        cout<<j<<" - "<<*it<<"\n";
+        j++;
+    }
+    cout<<"Enter the task number to be marked as finished: ";
+    int n;
+    cin>>n;
+    p[n]=1;
+    cout<<"Marking task is completed"<<endl;
+}
+void left(list<string>&a,int *p)
+{
+    cout<<endl;
+    list<string>::iterator it;
+    int j=1;
+    for(it=a.begin();it!=a.end();it++)
+    {
+        cout<<j<<" - "<<*it<<"\n";
+        j++;
+    }
+        cout<<"Enter the task number to be removed: ";
+        int n;
+        cin>>n;
+        p[n]=2;
+        cout<<"Removing task is completed"<<endl;
+    
+    
+}
+int main()
+{
+    list<string>a;
+    a.push_back("Meditation");
+    a.push_back("Workout");
+    a.push_back("Assignment");
+    a.push_back("Cycling");
+    int p[100];
+    for(int j=0;j<100;j++)
+    {
+        p[j]=0;
+    }
+    while(true)
+    {
+        int ch;
+        cout<<"Press 1 to ADD new task"<<endl;
+        cout<<"Press 2 to DISPLAY all tasks"<<endl;
+        cout<<"Press 3 to Mark a task as completed"<<endl;
+        cout<<"Press 4 to REMOVE  a task"<<endl;
+        cout<<"Press 5 to END"<<endl;
+        cout<<"Enter any value:";
+        cin>>ch;
+        if(ch==1)
+        {
+            Add(a);
+        }
+        else if(ch==2)
+        {
+            show(a,p);
+        }
+        else if(ch==3)
+        {
+            score(a,p);
+        }
+        else if(ch==4)
+        {
+            left(a,p);
+            
+        }
+        else if(ch==5)
+        {
+            cout<<"Thank you for using";
+            break;
+        }
+        else
+        {
+            cout<<"Invalid choice"<<endl;
+        }
+    }
+}

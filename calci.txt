@@ -1,0 +1,62 @@
+#include<iostream>
+#include<iomanip>
+#include<cstring>
+#include<cmath>
+using namespace std;
+int main()
+{
+    int num;
+    cout<<"Enter the input 1 or 2"<<endl;
+    cout<<"Enter the input:";
+    cin>>num;
+    if(num==1)
+    {
+        int num1;
+        cout<<"Enter the number";
+        cin>>num1;
+        cout<<"Use | for Square root"<<endl;
+        cout<<"Use / for Cube root"<<endl;
+        char opt;
+        cout<<"Enter the required Operation";
+        cin>>opt;
+        if(opt=='|')
+        {
+            cout<<"Result:"<<sqrt(num1)<<endl;
+            
+        }
+        else if(opt=='/')
+        {
+            cout<<"Result:"<<sqrt(num1)<<endl;
+        }
+        else 
+        {
+            cout<<"Error";
+        }
+    }
+        else if(num==2)
+        {
+            int num1,num2;
+            cout<<"Enter two numbers:";
+            cin>>num1>>num2;
+            cout<<"Use + for Addition"<<endl;
+            cout<<"Use - for Subtraction"<<endl;
+            cout<<"use * for Multiplication"<<endl;
+            cout<<"Use / for Division"<<endl;
+            cout<<"Use ^ for Power"<<endl;
+            char opt;
+            cout<<"enter the required Operation:";
+            cin>>opt;
+            if(opt=='+')
+            cout<<"Result:"<<num1+num2;
+            else if(opt=='-')
+            cout<<"Result:"<<num1-num2;
+            else if(opt=='*')
+            cout<<"Result:"<<num1*num2;
+            else if(opt=='/')
+            cout<<"Result:"<<num1/num2;
+            else if(opt=='^')
+            cout<<"Result:"<<pow(num1,num2);
+            else
+            cout<<"Error";
+        }
+    }
